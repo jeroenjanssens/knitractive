@@ -1,0 +1,14 @@
+Package: knitractive
+Title: A knitr engine to simulate interactive sessions
+Version: 0.0.0.9000
+Authors@R: person("Jeroen", "Janssens",
+                  email = "jeroen@datascienceworkshops.com",
+                  role = c("aut", "cre"))
+Description: This package provides a knitr engine that allows you to simulate
+    interactive sessions (e.g., Python console, Bash shell) across multiple
+    code chunks. 
+Depends: R (>= 3.4.0)
+License: GPLv3
+Encoding: UTF-8
+LazyData: true
+BugReports: https://github.com/datascienceworkshops/knitractive/issues
