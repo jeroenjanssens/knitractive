@@ -1,0 +1,54 @@
+---
+title: "knitractive test document"
+author: "Jeroen Janssens"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, echo=FALSE, results='asis'}
+library(knitractive)
+
+session <- register_active_engine(
+  name = "bash",
+  shell_command = "docker run --rm -it jeroenjanssens/data-science-at-the-command-line:latest",
+  prompt = "^(\\[.*\\]\\$|>)$",
+  lexer = "shell-session"
+)
+```
+
+
+```{r style, echo=FALSE, results='asis'}
+add_style("perldoc", border = FALSE)
+```
+
+
+```{bash}
+date
+seq 100 |
+grep 3 |
+wc -l
+```
+
+
+```{bash}
+NAME=$(whoami)
+```
+
+
+```{bash}
+alias
+l
+mkdir test && cd test
+echo "hi" | cowsay
+curl -sL http://bit.ly/iris-csv | csvlook
+```
+
+
+```{bash}
+echo $NAME
+```
+
+
+```{r exit, include = FALSE}
+tmuxr::kill_session(session)
+```
