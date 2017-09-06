@@ -15,6 +15,10 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+    - text: "Examples"
+      menu:
+      - text: Bash
+        href: articles/examples/test.html
     - text: "Reference"
       href: reference/index.html
   right:

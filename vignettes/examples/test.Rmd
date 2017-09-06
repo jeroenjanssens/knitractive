@@ -1,0 +1,91 @@
+---
+title: "knitractive test document"
+author: "Jeroen Janssens"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include = FALSE}
+library(knitractive)
+
+ka <- ActiveEngine$new(
+  name = "bash",
+  shell_command = "docker run --rm -it jeroenjanssens/data-science-at-the-command-line:latest",
+  prompt = "^(\\[.*\\]\\$|>)$",
+  lexer = "shell-session"
+)
+ka$start()
+```
+
+
+```{r style, echo=FALSE, results='asis'}
+add_style("perldoc", border = FALSE)
+```
+
+## Set a variable
+
+```{bash set_name}
+NAME=$(whoami)
+```
+
+## Spread a pipeline over multiple lines
+
+```{bash multiple}
+seq 100 |
+grep 3 |
+wc -l
+```
+
+## Retrieve a value
+
+```{bash get_name}
+cowsay "I am ${NAME}"
+```
+
+## Command substitution
+
+```{bash iris}
+alias
+mkdir test && cd test
+curl -sL http://bit.ly/iris-csv > iris.csv
+l
+echo "Iris has $(< iris.csv wc -l) lines"
+head iris.csv | csvlook
+```
+
+## Take a screenshot of `htop`
+
+```{bash install_htop}
+apk update
+apk add htop
+htop #~ literal = FALSE
+```
+
+After two seconds we see the following screen:
+
+```{bash start_htop, highlight = FALSE, start = 1, trim = FALSE}
+Enter #~ literal = FALSE, sleep_after = 1
+```
+```{bash exit_htop, include = FALSE}
+F10 #~ literal = FALSE
+```
+
+Press **F10** or **q** to exit `htop`. 
+
+## Send interrupt 
+
+We can simulate pressing **CTRL-C** to quit long-running processes:
+
+```{bash sleep}
+sleep 1000 #~ wait_for_prompt = FALSE
+C-c #~ delay_before = 1, literal = FALSE, wait_for_prompt = TRUE
+```
+
+## Create a file with `vi`:
+
+```{bash vi}
+vi example #~ wait_for_prompt = FALSE, sleep_after = 0.2
+i this Space is Space a Space test Escape : wq Enter #~ literal = FALSE
+cat example
+l
+```

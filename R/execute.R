@@ -26,21 +26,21 @@ execute_line <- function(session,
                          sleep_after = 0,
                          wait_for_prompt = literal)  {
 
-  if (delay_before > 0) wait(session, delay_before)
+  if (delay_before > 0) tmuxr::wait(session, delay_before)
   if (literal) {
-    send_keys(session, code, literal = TRUE)
+    tmuxr::send_keys(session, code, literal = TRUE)
   } else {
     parts <- strsplit(code, " ")[[1]]
     if (length(parts) < 2L) {
-      send_keys(session, parts[1], literal = FALSE)
+      tmuxr::send_keys(session, parts[1], literal = FALSE)
     } else {
       for (part in parts) {
-        send_keys(session, part, literal = FALSE)
-        wait(session, pause_inbetween)
+        tmuxr::send_keys(session, part, literal = FALSE)
+        tmuxr::wait(session, pause_inbetween)
       }
     }
   }
-  if (enter) send_enter(session)
-  if (sleep_after > 0) wait(session, sleep_after)
-  if (wait_for_prompt) wait_for_prompt(session)
+  if (enter) tmuxr::send_enter(session)
+  if (sleep_after > 0) tmuxr::wait(session, sleep_after)
+  if (wait_for_prompt) tmuxr::wait_for_prompt(session)
 }
