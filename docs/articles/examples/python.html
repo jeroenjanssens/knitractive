@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Using knitractive with Bash • knitractive</title>
+<title>Using knitractive with Python • knitractive</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- pkgdown --><link href="../../pkgdown.css" rel="stylesheet">
@@ -70,7 +70,7 @@
       </header><div class="row">
   <div class="col-md-9">
     <div class="page-header toc-ignore">
-      <h1>Using knitractive with Bash</h1>
+      <h1>Using knitractive with Python</h1>
                         <h4 class="author">Jeroen Janssens</h4>
             
             <h4 class="date">2017-09-06</h4>
@@ -79,7 +79,7 @@
     
     
 <div class="contents">
-<p><em>View the corresponding <a href="https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/bash.Rmd">bash.Rmd file</a>.</em></p>
+<p><em>View the corresponding <a href="https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/python.Rmd">python.Rmd file</a>.</em></p>
 <style>
 .highlight pre .hll { background-color: #ffffcc }
 .highlight pre  { background: #eeeedd; }
@@ -149,157 +149,46 @@
 .highlight pre .il { color: #B452CD } /* Literal.Number.Integer.Long */
 .highlight pre { border: none }
 </style>
-<div id="set-a-variable" class="section level2">
-<h2 class="hasAnchor">
-<a href="#set-a-variable" class="anchor"></a>Set a variable</h2>
+<p>In this example, we’re using the <a href="https://hub.docker.com/r/continuumio/anaconda3/">continuumio/anaconda3</a> docker image to run Python.</p>
 <div class="highlight">
-<pre><span></span><span class="gp">[/data]$</span> <span class="nv">NAME</span><span class="o">=</span><span class="k">$(</span>whoami<span class="k">)</span>
+<pre><span></span><span class="go">Python 3.6.1 |Anaconda 4.4.0 (64-bit)| (default, May 11 2017, 13:09:58)</span>
+<span class="go">[GCC 4.4.7 20120313 (Red Hat 4.4.7-1)] on linux</span>
+<span class="go">Type "help", "copyright", "credits" or "license" for more information.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matplotlib</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">'agg'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span>
+<span class="go">'0.20.1'</span>
 </pre>
 </div>
-</div>
-<div id="spread-a-pipeline-over-multiple-lines" class="section level2">
-<h2 class="hasAnchor">
-<a href="#spread-a-pipeline-over-multiple-lines" class="anchor"></a>Spread a pipeline over multiple lines</h2>
+<p>Because <code>knitractive</code> employs the <a href="https://datascienceworkshops.github.io/tmuxr/">tmuxr</a> package under the hood, the python session is maintained, and we can continue where we left off.</p>
 <div class="highlight">
-<pre><span></span><span class="gp">[/data]$</span> seq <span class="m">100</span> <span class="p">|</span>
-<span class="gp">&gt;</span> grep <span class="m">3</span> <span class="p">|</span>
-<span class="gp">&gt;</span> wc -l
-<span class="go">19</span>
+<pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span>
+<span class="gp">... </span>               <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1/1/2000'</span><span class="p">,</span>
+<span class="gp">... </span>               <span class="n">periods</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="go">2000-01-01   -0.427180</span>
+<span class="go">2000-01-02   -1.173972</span>
+<span class="go">2000-01-03   -0.904357</span>
+<span class="go">2000-01-04   -1.838681</span>
+<span class="go">2000-01-05   -3.667562</span>
+<span class="go">Freq: D, dtype: float64</span>
 </pre>
 </div>
-</div>
-<div id="retrieve-a-value" class="section level2">
-<h2 class="hasAnchor">
-<a href="#retrieve-a-value" class="anchor"></a>Retrieve a value</h2>
+<p>We’ve mapped the current working directory on the host to the directory <code>/data/</code> inside the docker container, so that we can include generated figures.</p>
 <div class="highlight">
-<pre><span></span><span class="gp">[/data]$</span> cowsay <span class="s2">"I am </span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">"</span>
-<span class="go"> ___________</span>
-<span class="go">&lt; I am root &gt;</span>
-<span class="go"> -----------</span>
-<span class="go">        \   ^__^</span>
-<span class="go">         \  (oo)\_______</span>
-<span class="go">            (__)\       )\/\</span>
-<span class="go">                ||----w |</span>
-<span class="go">                ||     ||</span>
+<pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"/data/python.png"</span><span class="p">)</span>
 </pre>
 </div>
-</div>
-<div id="command-substitution" class="section level2">
-<h2 class="hasAnchor">
-<a href="#command-substitution" class="anchor"></a>Command substitution</h2>
-<div class="highlight">
-<pre><span></span><span class="gp">[/data]$</span> <span class="nb">alias</span>
-<span class="go">alias l='ls -lph --group-directories-first'</span>
-<span class="gp">[/data]$</span> mkdir <span class="nb">test</span> <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="nb">test</span>
-<span class="gp">[/data/test]$</span> curl -sL http://bit.ly/iris-csv &gt; iris.csv
-<span class="gp">[/data/test]$</span> l
-<span class="go">total 8.0K</span>
-<span class="go">-rw-r--r-- 1 root root 4.5K Sep  6 19:43 iris.csv</span>
-<span class="gp">[/data/test]$</span> <span class="nb">echo</span> <span class="s2">"Iris has </span><span class="k">$(</span>&lt; iris.csv wc -l<span class="k">)</span><span class="s2"> lines"</span>
-<span class="go">Iris has 150 lines</span>
-<span class="gp">[/data/test]$</span> head iris.csv <span class="p">|</span> csvlook
-<span class="go">| SepalLength | SepalWidth | PetalLength | PetalWidth | Name        |</span>
-<span class="go">| ----------- | ---------- | ----------- | ---------- | ----------- |</span>
-<span class="go">|         5.1 |        3.5 |         1.4 |        0.2 | Iris-setosa |</span>
-<span class="go">|         4.9 |        3.0 |         1.4 |        0.2 | Iris-setosa |</span>
-<span class="go">|         4.7 |        3.2 |         1.3 |        0.2 | Iris-setosa |</span>
-<span class="go">|         4.6 |        3.1 |         1.5 |        0.2 | Iris-setosa |</span>
-<span class="go">|         5.0 |        3.6 |         1.4 |        0.2 | Iris-setosa |</span>
-<span class="go">|         5.4 |        3.9 |         1.7 |        0.4 | Iris-setosa |</span>
-<span class="go">|         4.6 |        3.4 |         1.4 |        0.3 | Iris-setosa |</span>
-<span class="go">|         5.0 |        3.4 |         1.5 |        0.2 | Iris-setosa |</span>
-<span class="go">|         4.4 |        2.9 |         1.4 |        0.2 | Iris-setosa |</span>
-</pre>
-</div>
-</div>
-<div id="take-a-screenshot-of-htop" class="section level2">
-<h2 class="hasAnchor">
-<a href="#take-a-screenshot-of-htop" class="anchor"></a>Take a screenshot of <code>htop</code>
-</h2>
-<div class="highlight">
-<pre><span></span><span class="gp">[/data/test]$</span> apk update
-<span class="go">fetch http://dl-cdn.alpinelinux.org/alpine/v3.5/main/x86_64/APKINDEX.tar.gz</span>
-<span class="go">fetch http://dl-cdn.alpinelinux.org/alpine/v3.5/community/x86_64/APKINDEX.tar.gz</span>
-<span class="go">v3.5.2-171-gb5b79ee2c8 [http://dl-cdn.alpinelinux.org/alpine/v3.5/main]</span>
-<span class="go">v3.5.2-168-g52b4d7b39a [http://dl-cdn.alpinelinux.org/alpine/v3.5/community]</span>
-<span class="go">OK: 7994 distinct packages available</span>
-<span class="gp">[/data/test]$</span> apk add htop
-<span class="go">(1/1) Installing htop (2.0.2-r0)</span>
-<span class="go">Executing busybox-1.25.1-r0.trigger</span>
-<span class="go">OK: 800 MiB in 169 packages</span>
-<span class="gp">[/data/test]$</span> htop
-</pre>
-</div>
-<p>After two seconds we see the following screen:</p>
-<div class="highlight">
-<pre><span></span>  1  [                          0.0%]   Tasks: 3, 0 thr; 1 running
-  2  [                          0.0%]   Load average: 0.15 0.16 0.12
-  Mem[|||||||||||||||||||3.86G/8.76G]   Uptime: 1 day, 16:38:31
-  Swp[                      0K/3.91G]
-
-  PID USER      PRI  NI  VIRT   RES   SHR S CPU% MEM%   TIME+  Command
-    1 root       20   0  1528     4     0 S  0.0  0.0  0:00.03 /bin/sh -c bash
-    5 root       20   0  6220  1728  1448 S  0.0  0.0  0:00.01 bash
-   27 root       20   0  3488  1156   908 R  0.0  0.0  0:00.00 htop
-
-
-
-
-
-
-
-
-
-
-
-
-F1Help  F2Setup F3SearchF4FilterF5Tree  F6SortByF7Nice -F8Nice +F9Kill  F10Quit
-</pre>
-</div>
-<p>Press <strong>F10</strong> or <strong>q</strong> to exit <code>htop</code>.</p>
-</div>
-<div id="send-interrupt" class="section level2">
-<h2 class="hasAnchor">
-<a href="#send-interrupt" class="anchor"></a>Send interrupt</h2>
-<p>We can simulate pressing <strong>CTRL-C</strong> to quit long-running processes:</p>
-<div class="highlight">
-<pre><span></span><span class="gp">[/data/test]$</span> sleep <span class="m">1000</span>
-<span class="go">^C</span>
-</pre>
-</div>
-</div>
-<div id="create-a-file-with-vi" class="section level2">
-<h2 class="hasAnchor">
-<a href="#create-a-file-with-vi" class="anchor"></a>Create a file with <code>vi</code>
-</h2>
-<div class="highlight">
-<pre><span></span><span class="gp">[/data/test]$</span> vi example
-<span class="gp">[/data/test]$</span> cat example
-<span class="go">this is a test</span>
-<span class="gp">[/data/test]$</span> l
-<span class="go">total 12K</span>
-<span class="go">-rw-r--r-- 1 root root   15 Sep  6 19:43 example</span>
-<span class="go">-rw-r--r-- 1 root root 4.5K Sep  6 19:43 iris.csv</span>
-</pre>
-</div>
+<div class="figure">
+<img src="python.png">
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#set-a-variable">Set a variable</a></li>
-      <li><a href="#spread-a-pipeline-over-multiple-lines">Spread a pipeline over multiple lines</a></li>
-      <li><a href="#retrieve-a-value">Retrieve a value</a></li>
-      <li><a href="#command-substitution">Command substitution</a></li>
-      <li><a href="#take-a-screenshot-of-htop">Take a screenshot of <code>htop</code></a></li>
-      <li><a href="#send-interrupt">Send interrupt</a></li>
-      <li><a href="#create-a-file-with-vi">Create a file with <code>vi</code></a></li>
-      </ul>
-</div>
       </div>
 
 </div>

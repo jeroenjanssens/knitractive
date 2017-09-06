@@ -11,13 +11,15 @@ ActiveEngine <- R6Class(
     shell_command = NULL,
     prompt = NULL,
     lexer = NULL,
+    keep_session = FALSE,
 
 
-    initialize = function(name, shell_command, prompt, lexer) {
+    initialize = function(name, shell_command, prompt, lexer, keep_session = FALSE) {
       self$name <- name
       self$shell_command <- shell_command
       self$prompt <- prompt
       self$lexer <- lexer
+      self$keep_session <- keep_session
     },
 
 
@@ -40,7 +42,9 @@ ActiveEngine <- R6Class(
 
 
     finalize = function() {
-      self$stop()
+      if (!self$keep_session) {
+        self$stop()
+      }
     }
   ),
 
