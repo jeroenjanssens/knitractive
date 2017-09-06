@@ -10,7 +10,7 @@ Description: This package provides a knitr engine that allows you to simulate
     code chunks. 
 Depends: R (>= 3.4.0),
     R6
-License: GPLv3
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/datascienceworkshops/knitractive

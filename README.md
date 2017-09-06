@@ -16,4 +16,4 @@ devtools::install_github("datascienceworkshops/knitractive")
 
 ### License
 
-The `knitractive` package is licensed under the GPLv3 (<http://www.gnu.org/licenses/gpl.html>).
+The `knitractive` package is licensed under the MIT License.
