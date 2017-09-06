@@ -18,7 +18,7 @@ navbar:
     - text: "Examples"
       menu:
       - text: Bash
-        href: articles/examples/test.html
+        href: articles/examples/bash.html
     - text: "Reference"
       href: reference/index.html
   right:
