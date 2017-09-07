@@ -14,7 +14,7 @@ engine <- ActiveEngine$new(
   name = "perl",
   shell_command = "docker run -it rakudo-star",
   prompt = "^(>|\\*)$",
-  lexer = "perl"
+  lexer = "perl6"
 )
 engine$start()
 ```

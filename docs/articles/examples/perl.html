@@ -153,18 +153,18 @@
 .highlight pre { border: none }
 </style>
 <div class="highlight">
-<pre><span></span><span class="n">To</span> <span class="nb">exit</span> <span class="n">type</span> <span class="s">'exit'</span> <span class="ow">or</span> <span class="s">'^D'</span>
-<span class="o">&gt;</span> <span class="k">sub</span> <span class="nf">hello</span><span class="p">($name = "World") {</span>
-<span class="o">*</span>   <span class="n">say</span> <span class="s">"Hello, $name!"</span>
-<span class="o">*</span> <span class="p">}</span>
-<span class="k">sub</span> <span class="nf">hello</span> <span class="p">($name = "World") {</span> <span class="c1">#`(Sub|100165032) ... }</span>
+<pre><span></span><span class="n">To</span> <span class="k">exit</span> <span class="n">type</span> <span class="s">'exit'</span> <span class="o">or</span> <span class="s">'^D'</span>
+&gt; <span class="k">sub</span> <span class="n">hello</span>(<span class="nv">$name</span> = <span class="s">"World"</span>) {
+*   <span class="nb">say</span> <span class="s">"Hello, $name!"</span>
+* }
+<span class="k">sub</span> <span class="n">hello</span> (<span class="nv">$name</span> = <span class="s">"World"</span>) { <span class="cm">#`(Sub|73487976)</span> ... }
 </pre>
 </div>
 <div class="highlight">
-<pre><span></span><span class="o">&gt;</span> <span class="n">hello</span><span class="p">()</span>
-<span class="n">Hello</span><span class="p">,</span> <span class="n">World</span><span class="o">!</span>
-<span class="o">&gt;</span> <span class="n">hello</span><span class="p">(</span><span class="s">'You'</span><span class="p">)</span>
-<span class="n">Hello</span><span class="p">,</span> <span class="n">You</span><span class="o">!</span>
+<pre><span></span>&gt; <span class="n">hello</span>()
+<span class="n">Hello</span>, <span class="n">World</span>!
+&gt; <span class="n">hello</span>(<span class="s">'You'</span>)
+<span class="n">Hello</span>, <span class="n">You</span>!
 </pre>
 </div>
 </div>
