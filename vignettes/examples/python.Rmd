@@ -36,17 +36,36 @@ pd.__version__
 Because `knitractive` employs the [tmuxr](https://datascienceworkshops.github.io/tmuxr/) package under the hood, the python session is maintained, and we can continue where we left off.
 
 ```{python}
-ts = pd.Series(pd.np.random.randn(1000),
-               index=pd.date_range('1/1/2000',
-               periods=1000))
+ts = pd.DataFrame({"value": pd.np.random.randn(1000)},
+                  index=pd.date_range('1/1/2000',
+                  periods=1000))
 ts = ts.cumsum()
-ts.head()
+ts.head() #~ enter = FALSE, wait_for_prompt = FALSE
+```
+
+```{python, include = FALSE}
+C-c #~ literal = FALSE, wait_for_prompt = TRUE
+ts.head().to_html("/data/python_ts.html", border=0)
+```
+
+```{r, echo = FALSE}
+htmltools::includeHTML("python_ts.html")
+unlink("python_ts.html")
 ```
 
 We've mapped the current working directory on the host to the directory `/data/` inside the docker container, so that we can include generated figures.
 
 ```{python}
-ts.plot().figure.savefig("/data/python.png")
+ts.plot() #~ enter = FALSE, wait_for_prompt = FALSE
 ```
 
-![](python.png)
+```{python, include = FALSE}
+C-c #~ delay_before = 0.2, literal = FALSE, wait_for_prompt = TRUE
+ts.plot().figure.savefig("/data/python_ts.png", dpi = 200)
+```
+
+```{r, echo = FALSE}
+knitr::include_graphics("python_ts.png")
+```
+
+

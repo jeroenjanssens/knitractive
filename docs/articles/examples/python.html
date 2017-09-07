@@ -73,7 +73,7 @@
       <h1>Using knitractive with Python</h1>
                         <h4 class="author">Jeroen Janssens</h4>
             
-            <h4 class="date">2017-09-06</h4>
+            <h4 class="date">2017-09-07</h4>
           </div>
 
     
@@ -164,27 +164,47 @@
 </div>
 <p>Because <code>knitractive</code> employs the <a href="https://datascienceworkshops.github.io/tmuxr/">tmuxr</a> package under the hood, the python session is maintained, and we can continue where we left off.</p>
 <div class="highlight">
-<pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span>
-<span class="gp">... </span>               <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1/1/2000'</span><span class="p">,</span>
-<span class="gp">... </span>               <span class="n">periods</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
+<pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"value"</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)},</span>
+<span class="gp">... </span>                  <span class="n">index</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">'1/1/2000'</span><span class="p">,</span>
+<span class="gp">... </span>                  <span class="n">periods</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="go">2000-01-01   -0.427180</span>
-<span class="go">2000-01-02   -1.173972</span>
-<span class="go">2000-01-03   -0.904357</span>
-<span class="go">2000-01-04   -1.838681</span>
-<span class="go">2000-01-05   -3.667562</span>
-<span class="go">Freq: D, dtype: float64</span>
 </pre>
 </div>
+<table border="0" class="table">
+<thead><tr style="text-align: right;">
+<th></th>
+      <th>value</th>
+    </tr></thead>
+<tbody>
+<tr>
+<th>2000-01-01</th>
+      <td>0.666958</td>
+    </tr>
+<tr>
+<th>2000-01-02</th>
+      <td>0.239634</td>
+    </tr>
+<tr>
+<th>2000-01-03</th>
+      <td>-1.235195</td>
+    </tr>
+<tr>
+<th>2000-01-04</th>
+      <td>-0.941780</td>
+    </tr>
+<tr>
+<th>2000-01-05</th>
+      <td>-0.188111</td>
+    </tr>
+</tbody>
+</table>
 <p>We’ve mapped the current working directory on the host to the directory <code>/data/</code> inside the docker container, so that we can include generated figures.</p>
 <div class="highlight">
-<pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"/data/python.png"</span><span class="p">)</span>
+<pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ts</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </pre>
 </div>
-<div class="figure">
-<img src="python.png">
-</div>
+<p><img src="python_ts.png" width="640"></p>
 </div>
   </div>
 
