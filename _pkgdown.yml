@@ -13,8 +13,10 @@ navbar:
   title: "knitractive"
   type: inverse
   left:
-    - text: "Home"
+    - icon: fa-home fa-lg
       href: index.html
+    - text: "Get Started"
+      href: articles/knitractive.html
     - text: "Examples"
       menu:
       - text: Bash

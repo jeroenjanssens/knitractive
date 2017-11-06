@@ -2,4 +2,6 @@
 
 export(ActiveEngine)
 export(add_style)
+export(html_document)
+export(ioslides_presentation)
 importFrom(R6,R6Class)

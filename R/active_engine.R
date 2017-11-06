@@ -102,3 +102,18 @@ BashActiveEngine <- R6Class(
     }
   )
 )
+
+
+PythonActiveEngine <- R6Class(
+  "PythonActiveEngine",
+  inherit = ActiveEngine,
+  public = list(
+    initialize = function(name = "python",
+                          shell_command = "python",
+                          prompt = "^(>>>|\\.\\.\\.)$",
+                          lexer = "pycon",
+                          keep_session = FALSE) {
+      super$initialize(name, shell_command, prompt, lexer, keep_session)
+    }
+  )
+)

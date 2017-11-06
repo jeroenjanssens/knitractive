@@ -1,0 +1,30 @@
+---
+title: "Untitled"
+output: 
+  knitractive::html_document:
+    engine_name: python
+    engine_command: "docker run --rm -it continuumio/anaconda3 python3"
+    engine_prompt: "^(>>>|\\.\\.\\.)$"
+    engine_lexer: pycon
+    keep_session: false
+    style_name: perldoc
+    style_border: false
+---
+
+Assignment in Python
+
+```{python, include = FALSE}
+```
+
+```{python}
+numbers = [1, 2, 3]
+```
+
+Looping in Python
+
+```{python}
+for i in numbers:
+    print(i) # print value to screen
+#~    
+```
+
