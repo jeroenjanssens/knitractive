@@ -57,7 +57,7 @@ ActiveEngine <- R6Class(
       if (length(options$highlight) == 0) options$highlight = TRUE
       if (length(options$trim) == 0) options$trim = TRUE
       if (length(options$line_option_marker) == 0) {
-        options$line_option_marker = "#~"
+        options$line_option_marker = "#!"
       }
 
       lines <- options$code

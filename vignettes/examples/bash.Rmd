@@ -59,16 +59,16 @@ head iris.csv | csvlook
 ```{bash install_htop}
 apk update
 apk add htop
-htop #~ literal = FALSE
+htop #! literal = FALSE
 ```
 
 After two seconds we see the following screen:
 
 ```{bash start_htop, highlight = FALSE, start = 1, trim = FALSE}
-Enter #~ literal = FALSE, sleep_after = 1
+Enter #! literal = FALSE, sleep_after = 1
 ```
 ```{bash exit_htop, include = FALSE}
-F10 #~ literal = FALSE
+F10 #! literal = FALSE
 ```
 
 Press **F10** or **q** to exit `htop`. 
@@ -78,15 +78,15 @@ Press **F10** or **q** to exit `htop`.
 We can simulate pressing **CTRL-C** to quit long-running processes:
 
 ```{bash sleep}
-sleep 1000 #~ wait_for_prompt = FALSE
-C-c #~ delay_before = 1, literal = FALSE, wait_for_prompt = TRUE
+sleep 1000 #! wait_for_prompt = FALSE
+C-c #! delay_before = 1, literal = FALSE, wait_for_prompt = TRUE
 ```
 
 ## Create a file with `vi`
 
 ```{bash vi}
-vi example #~ wait_for_prompt = FALSE, sleep_after = 0.2
-i this Space is Space a Space test Escape : wq Enter #~ literal = FALSE
+vi example #! wait_for_prompt = FALSE, sleep_after = 0.2
+i this Space is Space a Space test Escape : wq Enter #! literal = FALSE
 cat example
 l
 ```

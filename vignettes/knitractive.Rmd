@@ -46,7 +46,7 @@ The knitractive package provides a knitr engine that allows you to simulate inte
 
 ## Line options
 
-    #~ enter = TRUE, 
+    #! enter = TRUE, 
 
 
 ## Debugging

@@ -15,7 +15,7 @@ engine <- ActiveEngine$new(
   shell_command = "docker run --rm -it -v`pwd`:/data continuumio/anaconda3 python3",
   prompt = tmuxr::prompts$python,
   lexer = "pycon",
-  keep_session = TRUE
+  keep_session = FALSE
 )
 engine$start()
 ```
@@ -29,7 +29,7 @@ In this example, we're using the [continuumio/anaconda3](https://hub.docker.com/
 ```{python}
 import pandas as pd
 import matplotlib
-Enter #~ literal = FALSE
+Enter #! literal = FALSE
 matplotlib.use('agg')
 pd.__version__
 ```
@@ -41,11 +41,11 @@ ts = pd.DataFrame({"value": pd.np.random.randn(1000)},
                   index=pd.date_range('1/1/2000',
                   periods=1000))
 ts = ts.cumsum()
-ts.head() #~ enter = FALSE, wait_for_prompt = FALSE
+ts.head() #! enter = FALSE, wait_for_prompt = FALSE
 ```
 
 ```{python, include = FALSE}
-C-c #~ literal = FALSE, wait_for_prompt = TRUE
+C-c #! literal = FALSE, wait_for_prompt = TRUE
 ts.head().to_html("/data/python_ts.html", border=0)
 ```
 
@@ -57,11 +57,11 @@ unlink("python_ts.html")
 We've mapped the current working directory on the host to the directory `/data/` inside the docker container, so that we can include generated figures.
 
 ```{python}
-ts.plot() #~ enter = FALSE, wait_for_prompt = FALSE
+ts.plot() #! enter = FALSE, wait_for_prompt = FALSE
 ```
 
 ```{python, include = FALSE}
-C-c #~ delay_before = 0.2, literal = FALSE, wait_for_prompt = TRUE
+C-c #! delay_before = 0.2, literal = FALSE, wait_for_prompt = TRUE
 ts.plot().figure.savefig("/data/python_ts.png", dpi = 200)
 ```
 

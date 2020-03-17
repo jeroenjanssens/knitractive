@@ -31,7 +31,7 @@ execute_line <- function(session,
     tmuxr::send_keys(session, code, literal = TRUE)
   } else {
     parts <- strsplit(code, " ")[[1]]
-    if (length(parts) < 2L) {
+    if (length(parts) == 1L) {
       tmuxr::send_keys(session, parts[1], literal = FALSE)
     } else {
       for (part in parts) {
