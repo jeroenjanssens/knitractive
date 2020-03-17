@@ -21,9 +21,9 @@ execute_line <- function(session,
                          code,
                          literal = TRUE,
                          enter = literal,
-                         delay_before = 0,
+                         delay_before = 0.1,
                          pause_inbetween = 0.1,
-                         sleep_after = 0,
+                         sleep_after = 0.1,
                          wait_for_prompt = literal)  {
 
   if (delay_before > 0) tmuxr::wait(session, delay_before)
