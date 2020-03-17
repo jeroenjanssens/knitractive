@@ -3,6 +3,7 @@ pkgdown: 1.4.1
 pkgdown_sha: ~
 articles:
   bash: examples/bash.html
+  julia: examples/julia.html
   perl: examples/perl.html
   python: examples/python.html
   knitractive: knitractive.html

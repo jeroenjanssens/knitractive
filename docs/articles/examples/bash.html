@@ -61,6 +61,9 @@
       <a href="../../articles/examples/perl.html">Perl</a>
     </li>
     <li>
+      <a href="../../articles/examples/julia.html">Julia</a>
+    </li>
+    <li>
       <a href="../../articles/examples/python.html">Python</a>
     </li>
   </ul>
@@ -216,7 +219,7 @@
 <span class="gp">[/data/test]$</span> curl -sL http://bit.ly/iris-csv &gt; iris.csv
 <span class="gp">[/data/test]$</span> l
 <span class="go">total 8.0K</span>
-<span class="go">-rw-r--r-- 1 root root 4.5K Mar 17 16:43 iris.csv</span>
+<span class="go">-rw-r--r-- 1 root root 4.5K Mar 17 19:29 iris.csv</span>
 <span class="gp">[/data/test]$</span> <span class="nb">echo</span> <span class="s2">"Iris has </span><span class="k">$(</span>&lt; iris.csv wc -l<span class="k">)</span><span class="s2"> lines"</span>
 <span class="go">Iris has 150 lines</span>
 <span class="gp">[/data/test]$</span> head iris.csv <span class="p">|</span> csvlook
@@ -255,14 +258,14 @@
 <p>After two seconds we see the following screen:</p>
 <div class="highlight">
 <pre><span></span>  1  [                          0.0%]   Tasks: 3, 0 thr; 1 running
-  2  [                          0.0%]   Load average: 0.22 0.08 0.08
-  Mem[|||||||||||||||||||1.50G/3.86G]   Uptime: 11 days, 20:26:30
+  2  [                          0.0%]   Load average: 0.20 0.16 0.14
+  Mem[|||||||||||||||||||1.38G/3.86G]   Uptime: 00:14:14
   Swp[                      0K/1024M]
 
   PID USER      PRI  NI  VIRT   RES   SHR S CPU% MEM%   TIME+  Command
-    1 root       20   0  1524     4     0 S  0.0  0.0  0:00.08 /bin/sh -c bash
-    8 root       20   0  6216  1920  1648 S  0.0  0.0  0:00.02 bash
-   30 root       20   0  3492  1196   944 R  0.0  0.0  0:00.00 htop
+    1 root       20   0  1524     4     0 S  0.0  0.0  0:00.33 /bin/sh -c bash
+    5 root       20   0  6216  1856  1580 S  0.0  0.0  0:00.11 bash
+   27 root       20   0  3492  1152   904 R  0.0  0.0  0:00.00 htop
 
 
 
@@ -301,8 +304,8 @@ F1Help  F2Setup F3SearchF4FilterF5Tree  F6SortByF7Nice -F8Nice +F9Kill  F10Quit
 <span class="go">this is a test</span>
 <span class="gp">[/data/test]$</span> l
 <span class="go">total 12K</span>
-<span class="go">-rw-r--r-- 1 root root   15 Mar 17 16:43 example</span>
-<span class="go">-rw-r--r-- 1 root root 4.5K Mar 17 16:43 iris.csv</span>
+<span class="go">-rw-r--r-- 1 root root   15 Mar 17 19:29 example</span>
+<span class="go">-rw-r--r-- 1 root root 4.5K Mar 17 19:29 iris.csv</span>
 </pre>
 </div>
 </div>

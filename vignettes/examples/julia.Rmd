@@ -1,0 +1,50 @@
+---
+title: "Using knitractive with Julia"
+author: "Jeroen Janssens"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+*View the corresponding [julia.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/julia.Rmd).*
+
+```{r setup, include = FALSE}
+library(knitractive)
+
+engine <- ActiveEngine$new(
+  name = "julia",
+  shell_command = "docker run -it --rm julia",
+  prompt = "^julia>$",
+  lexer = "julia"
+)
+engine$start()
+```
+
+```{r style, echo=FALSE, results='asis'}
+add_style("solarized-dark", border = FALSE)
+```
+
+In this example, we're using the [julia](https://hub.docker.com/_/julia/) docker image to run Julia.
+
+```{julia}
+```
+
+Two-dimensional arrays use space-separated values and semicolon-separated rows:
+
+
+```{julia}
+M = [1 2; 3 4]
+```
+
+You can use certain unicode characters as variable names. This is especially handy for mathematical notation:
+
+```{julia}
+M * π
+```
+
+While loops loop while a condition is true:
+
+```{julia}
+for animal in ["dog", "cat", "mouse"] #! wait_for_prompt = FALSE
+    println("$animal is a mammal") #! wait_for_prompt = FALSE
+end
+```

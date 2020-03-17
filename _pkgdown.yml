@@ -23,6 +23,8 @@ navbar:
         href: articles/examples/bash.html
       - text: Perl
         href: articles/examples/perl.html
+      - text: Julia
+        href: articles/examples/julia.html
       - text: Python
         href: articles/examples/python.html
     - text: "Reference"
