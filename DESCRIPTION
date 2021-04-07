@@ -2,7 +2,7 @@ Package: knitractive
 Title: A knitr engine to simulate interactive sessions
 Version: 0.0.0.9000
 Authors@R: c(
-    person("Jeroen", "Janssens", email = "jeroen@datascienceworkshops.com", role = c("aut", "cre")),
+    person("Jeroen", "Janssens", email = "jeroen@datascienceworkshops.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-5878-8924")),
     person("Data Science Workshops", role = c("cph", "fnd"))
     )                  
 Description: This package provides a knitr engine that allows you to simulate
