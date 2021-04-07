@@ -13,9 +13,6 @@ output:
 
 Assignment in Python
 
-```{python, include = FALSE}
-```
-
 ```{python}
 numbers = [1, 2, 3]
 ```
@@ -25,6 +22,4 @@ Looping in Python
 ```{python}
 for i in numbers:
     print(i) # print value to screen
-#~    
 ```
-

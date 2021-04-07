@@ -1,0 +1,78 @@
+---
+title: "Multiple fullscreen captures"
+author: "Jeroen Janssens"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    highlight: zenburn
+---
+
+```{r}
+knitractive::start("bash",
+                   prompt = tmuxr::prompts$bash,
+                   docker_image = "ubuntu:bionic",
+                   session_width = 100,
+                   session_height = 16)
+```
+
+```{bash, include = FALSE}
+PS1='$ '
+```
+
+```{bash}
+top #! enter = FALSE
+```
+
+Normally, the screen "scrolls" after the output has been captured. This can be prevented by specifying the chunk option `scroll = FALSE`, which is especially useful for making multiple captures of fullscreen interfaces like `top`.
+
+```{bash, literal = FALSE, scroll = FALSE}
+Enter #! hold = 1
+```
+
+Scrolling is needed only after the last capture, so with the next chunk, we don't specify `scroll = FALSE`.
+
+```{bash, literal = FALSE}
+#! wait = 1
+```
+
+```{bash, keep_last_prompt = TRUE, fullscreen = TRUE}
+C-c #! literal = FALSE
+seq 10
+```
+
+```{bash, include = FALSE}
+apt-get update
+apt-get install -y parallel vim
+parallel --citation
+will cite
+```
+
+```{bash}
+seq 5 | parallel --progress 'sleep 1' #! enter = FALSE
+```
+
+```{bash, literal = FALSE, scroll = FALSE}
+Enter #! hold = 1
+```
+
+```{bash, literal = FALSE, scroll = FALSE}
+#! hold = 2
+```
+
+```{bash, literal = FALSE}
+#! hold = 1
+```
+
+```{bash, include = FALSE}
+vim
+```
+
+```{bash}
+
+```
+
+
+```{bash}
+echo Fin
+```
+

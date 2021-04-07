@@ -1,10 +1,13 @@
-pandoc: 2.8.1
-pkgdown: 1.4.1
+pandoc: 2.11.3.1
+pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  bash: examples/bash.html
-  julia: examples/julia.html
-  perl: examples/perl.html
-  python: examples/python.html
+  examples/asciinema: asciinema.html
+  examples/bash: bash.html
+  examples/julia: julia.html
+  examples/perl: perl.html
+  examples/python: python.html
+  examples/r: r.html
   knitractive: knitractive.html
+last_built: 2021-02-06T17:35Z
 

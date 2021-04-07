@@ -44,7 +44,7 @@ M * π
 While loops loop while a condition is true:
 
 ```{julia}
-for animal in ["dog", "cat", "mouse"] #! wait_for_prompt = FALSE
-    println("$animal is a mammal") #! wait_for_prompt = FALSE
+for animal in ["dog", "cat", "mouse"] #! expect_prompt = FALSE
+    println("$animal is a mammal") #! expect_prompt = FALSE
 end
 ```

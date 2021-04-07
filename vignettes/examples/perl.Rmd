@@ -8,20 +8,10 @@ output: html_document
 *View the corresponding [perl.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/perl.Rmd).*
 
 ```{r setup, include = FALSE}
-library(knitractive)
-
-engine <- ActiveEngine$new(
-  name = "perl",
-  shell_command = "docker run -it rakudo-star",
-  prompt = "^(>|\\*)$",
-  lexer = "perl6"
-)
-engine$start()
+knitractive::start("perl", rexpect::cmd_docker(image = "rakudo-star"), prompt = "^(>|\\*)$")
 ```
 
-```{r style, echo=FALSE, results='asis'}
-add_style("perldoc", border = FALSE)
-```
+Create a function in Perl.
 
 ```{perl}
 sub hello($name = "World") {
@@ -29,7 +19,10 @@ sub hello($name = "World") {
 }
 ```
 
+Use function in a later chunk.
+
 ```{perl}
 hello();
 hello('You');
 ```
+

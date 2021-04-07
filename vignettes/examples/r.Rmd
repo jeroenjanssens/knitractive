@@ -1,0 +1,54 @@
+---
+title: "Run multiple versions of R using knitractive"
+author: "Jeroen Janssens"
+date: "`r Sys.Date()`"
+output:
+  knitractive::html_document:
+    engines:
+      r_local:
+        language: r
+        command: R
+      r_3_1_0:
+        language: r
+        docker_image: "rocker/r-ver:3.1.0" 
+      r_3_6_0:
+        language: r
+        docker_image: "rocker/r-ver:3.6.0" 
+---
+
+*View the corresponding [r.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/r.Rmd).*
+
+## Setup
+
+We can easily start more than one engine. Note that with the second and third engine, we don't need to specify `cmd` because the Docker images have a default command that gets executed. Each engine runs in an isolated tmux session.
+
+```{r setup}
+# knitractive::start("r_local", cmd = "R", prompt = "^(>|\\+)$", language = "r")
+# knitractive::start("r_3_1_0", prompt = "^(>|\\+)$", docker_image = "rocker/r-ver:3.1.0", language = "r")
+# knitractive::start("r_3_6_0", prompt = "^(>|\\+)$", docker_image = "rocker/r-ver:3.6.0", language = "r")
+```
+
+## Locally installed R
+
+```{r_local}
+(result <- t.test(1:10, y = c(7:20)))
+result$stderr
+```
+
+## R version 3.1.0
+
+Call `t.test()` in R version 3.1.0.
+
+```{r_3_1_0}
+(result <- t.test(1:10, y = c(7:20)))
+result$stderr
+```
+
+## R version 3.6.0
+
+From R version 3.6.0, `t.test()` also returns the standard error (in list component stderr).
+
+```{r_3_6_0}
+(result <- t.test(1:10, y = c(7:20)))
+result$stderr
+```
