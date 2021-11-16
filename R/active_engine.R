@@ -82,6 +82,7 @@ ActiveEngine <- R6Class(
       invisible(self)
     },
 
+
     finalize = function() {
       if (!self$keep_session) {
         self$stop()
@@ -104,7 +105,6 @@ ActiveEngine <- R6Class(
       if (length(options$echo) == 0L) options$echo <- TRUE
       if (length(options$escape) == 0L) options$escape <- FALSE
       if (length(options$callouts) == 0L) options$callouts <- list()
-      #if (length(options$expect_prompt) == 0L) options$expect_prompt <- TRUE
 
       options$session <- self$session
       do.call(rexpect::send_script, options)
@@ -137,12 +137,6 @@ ActiveEngine <- R6Class(
           !options$fullscreen &&
           rexpect::ends_with_prompt(self$session)) {
         output <- head(output, -1)
-
-        # This is a hack for when the prompt starts with a newline:
-        # TODO: Enable multi-line prompts and remove this hack
-        if (grepl("^ $", tail(output, 1))) {
-          output <- head(output, -1)
-        }
       }
 
       # Add empty lines to enforce fullscreen
