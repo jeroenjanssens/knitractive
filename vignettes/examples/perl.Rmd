@@ -2,10 +2,10 @@
 title: "Using knitractive with Perl"
 author: "Jeroen Janssens"
 date: "`r Sys.Date()`"
-output: html_document
+output: github_document
 ---
 
-*View the corresponding [perl.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/perl.Rmd).*
+*View the corresponding [perl.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/perl.Rmd) to learn more about how this page was generated.*
 
 ```{r setup, include = FALSE}
 knitractive::start("perl", rexpect::cmd_docker(image = "rakudo-star"), prompt = "^(>|\\*)$")
@@ -23,6 +23,8 @@ Use function in a later chunk.
 
 ```{perl}
 hello();
-hello('You');
+hello('R Markdown');
 ```
 
+
+*View the corresponding [perl.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/perl.Rmd) to learn more about how this page was generated.*

@@ -2,10 +2,9 @@ destination: docs
 
 authors:
   Jeroen Janssens:
-    href: http://jeroenjanssens.com
+    href: https://datascienceworkshops.com
   Data Science Workshops:
-    href: https://www.datascienceworkshops.com
-    html: <img class="data-science-workshops-logo" src="https://www.datascienceworkshops.com/assets/img/logo-dsw-flat-light.svg" />
+    href: https://datascienceworkshops.com
 
 template:
   params:
@@ -23,8 +22,6 @@ navbar:
         href: articles/examples/bash.html
       - text: Perl
         href: articles/examples/perl.html
-      - text: Julia
-        href: articles/examples/julia.html
       - text: Python
         href: articles/examples/python.html
     - text: "Reference"

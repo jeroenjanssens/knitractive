@@ -2,31 +2,30 @@
 title: "Using knitractive with Python"
 author: "Jeroen Janssens"
 date: "`r Sys.Date()`"
-output: html_document
+output: github_document
 ---
 
-*View the corresponding [python.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/python.Rmd).*
+*View the corresponding [python.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/python.Rmd) to learn more about how this page was generated.*
 
 ```{r setup, include = FALSE}
-
-engine <- ActiveEngine$new(
-  name = "python",
-  shell_command = "docker run --rm -it -v`pwd`:/data continuumio/anaconda3 python3",
-  prompt = rexpect::prompts$python,
-)
-engine$start()
-```
-
-```{r style, echo=FALSE, results='asis'}
-add_style("perldoc", border = FALSE)
+library(knitractive)
+library(rexpect)
+library(rlang)
+start(name = "python",
+      command = cmd_docker(command = "python3",
+                           image = "continuumio/anaconda3",
+                           volume = list2(!!getwd() := "/data")),
+      prompt = prompts$python,
+      keep_session = FALSE)
 ```
 
 In this example, we're using the [continuumio/anaconda3](https://hub.docker.com/r/continuumio/anaconda3/) docker image to run Python.
 
 ```{python}
+import numpy as np
 import pandas as pd
 import matplotlib
-Enter #! literal = FALSE
+Enter#! literal = FALSE
 matplotlib.use('agg')
 pd.__version__
 ```
@@ -34,15 +33,15 @@ pd.__version__
 Because `knitractive` employs the [tmuxr](https://datascienceworkshops.github.io/tmuxr/) package under the hood, the python session is maintained, and we can continue where we left off.
 
 ```{python}
-ts = pd.DataFrame({"value": pd.np.random.randn(1000)},
+ts = pd.DataFrame({"value": np.random.randn(1000)},
                   index=pd.date_range('1/1/2000',
                   periods=1000))
 ts = ts.cumsum()
-ts.head() #! enter = FALSE, wait_for_prompt = FALSE
+ts.head()#! enter = FALSE, expect_prompt = FALSE
 ```
 
 ```{python, include = FALSE}
-C-c #! literal = FALSE, wait_for_prompt = TRUE
+C-c#! literal = FALSE, expect_prompt = TRUE
 ts.head().to_html("/data/python_ts.html", border=0)
 ```
 
@@ -54,16 +53,16 @@ unlink("python_ts.html")
 We've mapped the current working directory on the host to the directory `/data/` inside the docker container, so that we can include generated figures.
 
 ```{python}
-ts.plot() #! enter = FALSE, wait_for_prompt = FALSE
+ts.plot() #! enter = FALSE, expect_prompt = FALSE
 ```
 
 ```{python, include = FALSE}
-C-c #! delay_before = 0.2, literal = FALSE, wait_for_prompt = TRUE
+C-c #! wait = 0.2, literal = FALSE, expect_prompt = TRUE
 ts.plot().figure.savefig("/data/python_ts.png", dpi = 200)
 ```
 
 ```{r, echo = FALSE}
-knitr::include_graphics("python_ts.png")
+knitr::include_graphics(paste0(getwd(), "/python_ts.png"))
 ```
 
-
+*View the corresponding [python.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/python.Rmd) to learn more about how this page was generated.*

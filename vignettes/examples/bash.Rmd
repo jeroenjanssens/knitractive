@@ -8,11 +8,9 @@ output: github_document
 *View the corresponding [bash.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/bash.Rmd) to learn more about how this page was generated.*
 
 ```{r setup, include = FALSE}
-options(tmux_echo = TRUE)
 knitractive::start(name = "bash",
                    command = rexpect::cmd_docker(image = "ubuntu:20.04"),
                    prompt = rexpect::prompts$bash)
-options(tmux_echo = FALSE)
 ```
 
 ```{bash, include=FALSE}

@@ -6,20 +6,27 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Using knitractive with Bash • knitractive</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../../pkgdown.css" rel="stylesheet">
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../../apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../../apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../../apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../../apple-touch-icon-60x60.png">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../../bootstrap-toc.css">
+<script src="../../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../../pkgdown.css" rel="stylesheet">
 <script src="../../pkgdown.js"></script><link href="../../extra.css" rel="stylesheet">
 <meta property="og:title" content="Using knitractive with Bash">
-<meta property="og:description" content="">
-<meta name="twitter:card" content="summary">
+<meta property="og:description" content="knitractive">
+<meta property="og:image" content="/logo.svg">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="#toc">
     <div class="container template-article">
       <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -44,9 +51,6 @@
      
   </a>
 </li>
-<li>
-  <a href="../../articles/knitractive.html">Get Started</a>
-</li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Examples
@@ -59,9 +63,6 @@
     </li>
     <li>
       <a href="../../articles/examples/perl.html">Perl</a>
-    </li>
-    <li>
-      <a href="../../articles/examples/julia.html">Julia</a>
     </li>
     <li>
       <a href="../../articles/examples/python.html">Python</a>
@@ -89,13 +90,13 @@
 
       
 
-      </header><div class="row">
+      </header><script src="bash_files/header-attrs-2.9/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Using knitractive with Bash</h1>
+      <h1 data-toc-skip>Using knitractive with Bash</h1>
                         <h4 class="author">Jeroen Janssens</h4>
             
-            <h4 class="date">2020-03-17</h4>
+            <h4 class="date">2021-11-16</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/datascienceworkshops/knitractive/blob/master/vignettes/examples/bash.Rmd"><code>vignettes/examples/bash.Rmd</code></a></small>
       <div class="hidden name"><code>bash.Rmd</code></div>
@@ -104,240 +105,102 @@
 
     
     
-<p><em>View the corresponding <a href="https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/bash.Rmd">bash.Rmd file</a>.</em></p>
-<style>
-.highlight pre .hll { background-color: #ffffcc }
-.highlight pre  { background: #eeeedd; }
-.highlight pre .c { color: #228B22 } /* Comment */
-.highlight pre .err { color: #a61717; background-color: #e3d2d2 } /* Error */
-.highlight pre .k { color: #8B008B; font-weight: bold } /* Keyword */
-.highlight pre .ch { color: #228B22 } /* Comment.Hashbang */
-.highlight pre .cm { color: #228B22 } /* Comment.Multiline */
-.highlight pre .cp { color: #1e889b } /* Comment.Preproc */
-.highlight pre .cpf { color: #228B22 } /* Comment.PreprocFile */
-.highlight pre .c1 { color: #228B22 } /* Comment.Single */
-.highlight pre .cs { color: #8B008B; font-weight: bold } /* Comment.Special */
-.highlight pre .gd { color: #aa0000 } /* Generic.Deleted */
-.highlight pre .ge { font-style: italic } /* Generic.Emph */
-.highlight pre .gr { color: #aa0000 } /* Generic.Error */
-.highlight pre .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight pre .gi { color: #00aa00 } /* Generic.Inserted */
-.highlight pre .go { color: #888888 } /* Generic.Output */
-.highlight pre .gp { color: #555555 } /* Generic.Prompt */
-.highlight pre .gs { font-weight: bold } /* Generic.Strong */
-.highlight pre .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight pre .gt { color: #aa0000 } /* Generic.Traceback */
-.highlight pre .kc { color: #8B008B; font-weight: bold } /* Keyword.Constant */
-.highlight pre .kd { color: #8B008B; font-weight: bold } /* Keyword.Declaration */
-.highlight pre .kn { color: #8B008B; font-weight: bold } /* Keyword.Namespace */
-.highlight pre .kp { color: #8B008B; font-weight: bold } /* Keyword.Pseudo */
-.highlight pre .kr { color: #8B008B; font-weight: bold } /* Keyword.Reserved */
-.highlight pre .kt { color: #00688B; font-weight: bold } /* Keyword.Type */
-.highlight pre .m { color: #B452CD } /* Literal.Number */
-.highlight pre .s { color: #CD5555 } /* Literal.String */
-.highlight pre .na { color: #658b00 } /* Name.Attribute */
-.highlight pre .nb { color: #658b00 } /* Name.Builtin */
-.highlight pre .nc { color: #008b45; font-weight: bold } /* Name.Class */
-.highlight pre .no { color: #00688B } /* Name.Constant */
-.highlight pre .nd { color: #707a7c } /* Name.Decorator */
-.highlight pre .ne { color: #008b45; font-weight: bold } /* Name.Exception */
-.highlight pre .nf { color: #008b45 } /* Name.Function */
-.highlight pre .nn { color: #008b45; text-decoration: underline } /* Name.Namespace */
-.highlight pre .nt { color: #8B008B; font-weight: bold } /* Name.Tag */
-.highlight pre .nv { color: #00688B } /* Name.Variable */
-.highlight pre .ow { color: #8B008B } /* Operator.Word */
-.highlight pre .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight pre .mb { color: #B452CD } /* Literal.Number.Bin */
-.highlight pre .mf { color: #B452CD } /* Literal.Number.Float */
-.highlight pre .mh { color: #B452CD } /* Literal.Number.Hex */
-.highlight pre .mi { color: #B452CD } /* Literal.Number.Integer */
-.highlight pre .mo { color: #B452CD } /* Literal.Number.Oct */
-.highlight pre .sa { color: #CD5555 } /* Literal.String.Affix */
-.highlight pre .sb { color: #CD5555 } /* Literal.String.Backtick */
-.highlight pre .sc { color: #CD5555 } /* Literal.String.Char */
-.highlight pre .dl { color: #CD5555 } /* Literal.String.Delimiter */
-.highlight pre .sd { color: #CD5555 } /* Literal.String.Doc */
-.highlight pre .s2 { color: #CD5555 } /* Literal.String.Double */
-.highlight pre .se { color: #CD5555 } /* Literal.String.Escape */
-.highlight pre .sh { color: #1c7e71; font-style: italic } /* Literal.String.Heredoc */
-.highlight pre .si { color: #CD5555 } /* Literal.String.Interpol */
-.highlight pre .sx { color: #cb6c20 } /* Literal.String.Other */
-.highlight pre .sr { color: #1c7e71 } /* Literal.String.Regex */
-.highlight pre .s1 { color: #CD5555 } /* Literal.String.Single */
-.highlight pre .ss { color: #CD5555 } /* Literal.String.Symbol */
-.highlight pre .bp { color: #658b00 } /* Name.Builtin.Pseudo */
-.highlight pre .fm { color: #008b45 } /* Name.Function.Magic */
-.highlight pre .vc { color: #00688B } /* Name.Variable.Class */
-.highlight pre .vg { color: #00688B } /* Name.Variable.Global */
-.highlight pre .vi { color: #00688B } /* Name.Variable.Instance */
-.highlight pre .vm { color: #00688B } /* Name.Variable.Magic */
-.highlight pre .il { color: #B452CD } /* Literal.Number.Integer.Long */
-.highlight pre { border: none }
-</style>
+<p><em>View the corresponding <a href="https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/bash.Rmd">bash.Rmd file</a> to learn more about how this page was generated.</em></p>
 <div id="set-a-variable" class="section level2">
 <h2 class="hasAnchor">
 <a href="#set-a-variable" class="anchor"></a>Set a variable</h2>
-<div class="highlight">
-<pre><span></span><span class="gp">[/data]$</span> <span class="nv">NAME</span><span class="o">=</span><span class="k">$(</span>whoami<span class="k">)</span>
-</pre>
-</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> NAME=<span class="va">$(</span><span class="fu">whoami</span><span class="va">)</span></span></code></pre></div>
 </div>
 <div id="spread-a-pipeline-over-multiple-lines" class="section level2">
 <h2 class="hasAnchor">
 <a href="#spread-a-pipeline-over-multiple-lines" class="anchor"></a>Spread a pipeline over multiple lines</h2>
-<div class="highlight">
-<pre><span></span><span class="gp">[/data]$</span> seq <span class="m">100</span> <span class="p">|</span>
-<span class="gp">&gt;</span> grep <span class="m">3</span> <span class="p">|</span>
-<span class="gp">&gt;</span> wc -l
-<span class="go">19</span>
-</pre>
-</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> seq 100 <span class="kw">|</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> grep <span class="ex">3</span> <span class="kw">|</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> wc <span class="ex">-l</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">19</span></span></code></pre></div>
 </div>
 <div id="retrieve-a-value" class="section level2">
 <h2 class="hasAnchor">
 <a href="#retrieve-a-value" class="anchor"></a>Retrieve a value</h2>
-<div class="highlight">
-<pre><span></span><span class="gp">[/data]$</span> cowsay <span class="s2">"I am </span><span class="si">${</span><span class="nv">NAME</span><span class="si">}</span><span class="s2">"</span>
-<span class="go"> ___________</span>
-<span class="go">&lt; I am root &gt;</span>
-<span class="go"> -----------</span>
-<span class="go">        \   ^__^</span>
-<span class="go">         \  (oo)\_______</span>
-<span class="go">            (__)\       )\/\</span>
-<span class="go">                ||----w |</span>
-<span class="go">                ||     ||</span>
-</pre>
-</div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cowsay <span class="st">"I am g</span><span class="va">${NAME}</span><span class="st">"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a> <span class="ex">____________</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span> I <span class="ex">am</span> groot <span class="op">&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a> <span class="ex">------------</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="ex">\ </span>  ^__^</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>         <span class="ex">\ </span> <span class="er">(</span><span class="ex">oo</span><span class="kw">)</span><span class="ex">\_______</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>            <span class="kw">(</span><span class="ex">__</span><span class="kw">)</span><span class="ex">\ </span>      <span class="er">)</span><span class="ex">\/</span><span class="dt">\</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                <span class="kw">||</span><span class="ex">----w</span> <span class="kw">|</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                <span class="kw">||</span>     <span class="kw">||</span></span></code></pre></div>
 </div>
 <div id="command-substitution" class="section level2">
 <h2 class="hasAnchor">
 <a href="#command-substitution" class="anchor"></a>Command substitution</h2>
-<div class="highlight">
-<pre><span></span><span class="gp">[/data]$</span> <span class="nb">alias</span>
-<span class="go">alias l='ls -lph --group-directories-first'</span>
-<span class="gp">[/data]$</span> mkdir <span class="nb">test</span> <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="nb">test</span>
-<span class="gp">[/data/test]$</span> curl -sL http://bit.ly/iris-csv &gt; iris.csv
-<span class="gp">[/data/test]$</span> l
-<span class="go">total 8.0K</span>
-<span class="go">-rw-r--r-- 1 root root 4.5K Mar 17 19:29 iris.csv</span>
-<span class="gp">[/data/test]$</span> <span class="nb">echo</span> <span class="s2">"Iris has </span><span class="k">$(</span>&lt; iris.csv wc -l<span class="k">)</span><span class="s2"> lines"</span>
-<span class="go">Iris has 150 lines</span>
-<span class="gp">[/data/test]$</span> head iris.csv <span class="p">|</span> csvlook
-<span class="go">| SepalLength | SepalWidth | PetalLength | PetalWidth | Name        |</span>
-<span class="go">| ----------- | ---------- | ----------- | ---------- | ----------- |</span>
-<span class="go">|         5.1 |        3.5 |         1.4 |        0.2 | Iris-setosa |</span>
-<span class="go">|         4.9 |        3.0 |         1.4 |        0.2 | Iris-setosa |</span>
-<span class="go">|         4.7 |        3.2 |         1.3 |        0.2 | Iris-setosa |</span>
-<span class="go">|         4.6 |        3.1 |         1.5 |        0.2 | Iris-setosa |</span>
-<span class="go">|         5.0 |        3.6 |         1.4 |        0.2 | Iris-setosa |</span>
-<span class="go">|         5.4 |        3.9 |         1.7 |        0.4 | Iris-setosa |</span>
-<span class="go">|         4.6 |        3.4 |         1.4 |        0.3 | Iris-setosa |</span>
-<span class="go">|         5.0 |        3.4 |         1.5 |        0.2 | Iris-setosa |</span>
-<span class="go">|         4.4 |        2.9 |         1.4 |        0.2 | Iris-setosa |</span>
-</pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> echo <span class="st">"CRAN has </span><span class="va">$(</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   curl <span class="ex">-sL</span> cran.r-project.org/web/packages/available_packages_by_date.html <span class="kw">|</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   grep <span class="st">"index.html"</span> <span class="kw">|</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>   wc <span class="ex">-l</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> <span class="va">)</span><span class="st"> packages"</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">CRAN</span> has 18424 packages</span></code></pre></div>
 </div>
-</div>
-<div id="take-a-screenshot-of-htop" class="section level2">
+<div id="take-a-screenshot-of-top" class="section level2">
 <h2 class="hasAnchor">
-<a href="#take-a-screenshot-of-htop" class="anchor"></a>Take a screenshot of <code>htop</code>
+<a href="#take-a-screenshot-of-top" class="anchor"></a>Take a screenshot of <code>top</code>
 </h2>
-<div class="highlight">
-<pre><span></span><span class="gp">[/data/test]$</span> apk update
-<span class="go">fetch http://dl-cdn.alpinelinux.org/alpine/v3.5/main/x86_64/APKINDEX.tar.gz</span>
-<span class="go">fetch http://dl-cdn.alpinelinux.org/alpine/v3.5/community/x86_64/APKINDEX.tar.gz</span>
-<span class="go">v3.5.3-40-g389d0b359a [http://dl-cdn.alpinelinux.org/alpine/v3.5/main]</span>
-<span class="go">v3.5.3-40-g389d0b359a [http://dl-cdn.alpinelinux.org/alpine/v3.5/community]</span>
-<span class="go">OK: 8014 distinct packages available</span>
-<span class="gp">[/data/test]$</span> apk add htop
-<span class="go">(1/1) Installing htop (2.0.2-r0)</span>
-<span class="go">Executing busybox-1.25.1-r0.trigger</span>
-<span class="go">OK: 800 MiB in 169 packages</span>
-<span class="gp">[/data/test]$</span> htop
-</pre>
-</div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> top</span></code></pre></div>
 <p>After two seconds we see the following screen:</p>
-<div class="highlight">
-<pre><span></span>  1  [                          0.0%]   Tasks: 3, 0 thr; 1 running
-  2  [                          0.0%]   Load average: 0.20 0.16 0.14
-  Mem[|||||||||||||||||||1.38G/3.86G]   Uptime: 00:14:14
-  Swp[                      0K/1024M]
-
-  PID USER      PRI  NI  VIRT   RES   SHR S CPU% MEM%   TIME+  Command
-    1 root       20   0  1524     4     0 S  0.0  0.0  0:00.33 /bin/sh -c bash
-    5 root       20   0  6216  1856  1580 S  0.0  0.0  0:00.11 bash
-   27 root       20   0  3492  1152   904 R  0.0  0.0  0:00.00 htop
-
-
-
-
-
-
-
-
-
-
-
-
-
-F1Help  F2Setup F3SearchF4FilterF5Tree  F6SortByF7Nice -F8Nice +F9Kill  F10Quit
-</pre>
-</div>
-<p>Press <strong>F10</strong> or <strong>q</strong> to exit <code>htop</code>.</p>
+<pre class="text"><code>top - 20:07:12 up 2 days, 12:50,  0 users,  load average: 0.29, 0.09, 0.02      
+Tasks:   2 total,   1 running,   1 sleeping,   0 stopped,   0 zombie            
+%Cpu(s):  0.0 us,  1.6 sy,  0.0 ni, 98.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   3933.6 total,   1373.2 free,    941.5 used,   1618.9 buff/cache     
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   2456.4 avail Mem      
+ 
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND    
+    1 root      20   0    3744   3064   2588 S   0.0   0.1   0:00.03 bash       
+ 2914 root      20   0    5736   2604   2216 R   0.0   0.1   0:00.00 top        
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </code></pre>
+<p>Press <strong>q</strong> to exit <code>top</code>.</p>
 </div>
 <div id="send-interrupt" class="section level2">
 <h2 class="hasAnchor">
 <a href="#send-interrupt" class="anchor"></a>Send interrupt</h2>
 <p>We can simulate pressing <strong>CTRL-C</strong> to quit long-running processes:</p>
-<div class="highlight">
-<pre><span></span><span class="gp">[/data/test]$</span> sleep <span class="m">1000</span>
-<span class="go">^C</span>
-</pre>
-</div>
-</div>
-<div id="create-a-file-with-vi" class="section level2">
-<h2 class="hasAnchor">
-<a href="#create-a-file-with-vi" class="anchor"></a>Create a file with <code>vi</code>
-</h2>
-<div class="highlight">
-<pre><span></span><span class="gp">[/data/test]$</span> vi example
-<span class="gp">[/data/test]$</span> cat example
-<span class="go">this is a test</span>
-<span class="gp">[/data/test]$</span> l
-<span class="go">total 12K</span>
-<span class="go">-rw-r--r-- 1 root root   15 Mar 17 19:29 example</span>
-<span class="go">-rw-r--r-- 1 root root 4.5K Mar 17 19:29 iris.csv</span>
-</pre>
-</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sleep 1000</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">^C</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span></span></code></pre></div>
+<p><em>View the corresponding <a href="https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/bash.Rmd">bash.Rmd file</a> to learn more about how this page was generated.</em></p>
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#set-a-variable">Set a variable</a></li>
-      <li><a href="#spread-a-pipeline-over-multiple-lines">Spread a pipeline over multiple lines</a></li>
-      <li><a href="#retrieve-a-value">Retrieve a value</a></li>
-      <li><a href="#command-substitution">Command substitution</a></li>
-      <li><a href="#take-a-screenshot-of-htop">Take a screenshot of <code>htop</code></a></li>
-      <li><a href="#send-interrupt">Send interrupt</a></li>
-      <li><a href="#create-a-file-with-vi">Create a file with <code>vi</code></a></li>
-      </ul>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
 </div>
-      </div>
 
 </div>
 
 
 
       <footer><div class="copyright">
-  <p>Developed by <a href="http://jeroenjanssens.com">Jeroen Janssens</a>, <a href="https://www.datascienceworkshops.com"><img class="data-science-workshops-logo" src="https://datascienceworkshops.github.io/knitractive/data-science-workshops.svg"></a>.</p>
+  <p>Developed by <a href="https://datascienceworkshops.com">Jeroen Janssens</a>, <a href="https://datascienceworkshops.com">Data Science Workshops</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
