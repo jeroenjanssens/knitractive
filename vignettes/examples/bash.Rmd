@@ -5,18 +5,21 @@ date: "`r Sys.Date()`"
 output: github_document
 ---
 
-*View the corresponding [bash.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/bash.Rmd).*
+*View the corresponding [bash.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/bash.Rmd) to learn more about how this page was generated.*
 
 ```{r setup, include = FALSE}
-# options(tmux_echo = TRUE)
+options(tmux_echo = TRUE)
 knitractive::start(name = "bash",
-                   command = rexpect::cmd_docker(image = "datasciencetoolbox/dsatcl2e"),
+                   command = rexpect::cmd_docker(image = "ubuntu:20.04"),
                    prompt = rexpect::prompts$bash)
+options(tmux_echo = FALSE)
 ```
 
 ```{bash, include=FALSE}
-bash
 PS1='$ '
+apt-get update
+apt-get install -y curl cowsay
+alias cowsay='/usr/games/cowsay'
 ```
 
 ## Set a variable
@@ -28,7 +31,6 @@ NAME=$(whoami)
 ## Spread a pipeline over multiple lines
 
 ```{bash multiple}
-echo "grep"
 seq 100 |
 grep 3 |
 wc -l
@@ -37,36 +39,36 @@ wc -l
 ## Retrieve a value
 
 ```{bash get_name}
-cowsay "I am ${NAME}"
+cowsay "I am g${NAME}"
 ```
 
 ## Command substitution
 
-```{bash iris}
-alias
-mkdir test && cd test
-curl -sL http://bit.ly/iris-csv > iris.csv
-l
-echo "Iris has $(< iris.csv wc -l) lines"
-head iris.csv | csvlook
+```{bash cran}
+echo "CRAN has $(
+  curl -sL cran.r-project.org/web/packages/available_packages_by_date.html |
+  grep "index.html" |
+  wc -l
+) packages"
 ```
 
-## Take a screenshot of `htop`
+## Take a screenshot of `top`
 
-```{bash run_htop}
-htop #! literal = FALSE
+```{bash run_top}
+top#! literal = FALSE
 ```
 
 After two seconds we see the following screen:
 
-```{bash start_htop, highlight = FALSE, fullscreen = TRUE}
-Enter #! literal = FALSE, hold = 3
-```
-```{bash exit_htop, include = FALSE}
-F10 #! literal = FALSE
+```{bash start_top, highlight = FALSE, fullscreen = TRUE}
+Enter#! literal = FALSE, hold = 3
 ```
 
-Press **F10** or **q** to exit `htop`. 
+Press **q** to exit `top`. 
+
+```{bash exit_top, include = FALSE}
+q#! enter = FALSE
+```
 
 ## Send interrupt 
 
@@ -76,3 +78,5 @@ We can simulate pressing **CTRL-C** to quit long-running processes:
 sleep 1000 #! expect_prompt = FALSE
 C-c #! wait = 1, literal = FALSE, expect_prompt = TRUE
 ```
+
+*View the corresponding [bash.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/bash.Rmd) to learn more about how this page was generated.*
