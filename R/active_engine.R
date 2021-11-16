@@ -100,7 +100,7 @@ ActiveEngine <- R6Class(
       if (length(options$fullscreen) == 0L) options$fullscreen <- FALSE
       if (length(options$trailing_spaces) == 0L) options$trailing_spaces <- FALSE
       if (length(options$keep_last_prompt) == 0) options$keep_last_prompt <- FALSE
-      #if (length(options$marker) == 0L) options$marker <- "#!"
+      if (length(options$marker) == 0L) options$marker <- "#!"
       if (length(options$echo) == 0L) options$echo <- TRUE
       if (length(options$escape) == 0L) options$escape <- FALSE
       if (length(options$callouts) == 0L) options$callouts <- list()
@@ -137,6 +137,12 @@ ActiveEngine <- R6Class(
           !options$fullscreen &&
           rexpect::ends_with_prompt(self$session)) {
         output <- head(output, -1)
+
+        # This is a hack for when the prompt starts with a newline:
+        # TODO: Enable multi-line prompts and remove this hack
+        if (grepl("^ $", tail(output, 1))) {
+          output <- head(output, -1)
+        }
       }
 
       # Add empty lines to enforce fullscreen
@@ -163,10 +169,19 @@ ActiveEngine <- R6Class(
         output[position] <- paste0(output[position], " # <", num, ">")
       }
 
-      if (length(options$remove) > 0L) {
-        to_remove <- ifelse(options$remove > 0, options$remove, length(output) + options$remove + 1)
+      # Remove lines based on indices
+      remove_idx <- unlist(purrr::keep(options$remove, is.numeric))
+      if (length(remove_idx) > 0L) {
+        to_remove <- ifelse(remove_idx > 0, remove_idx, length(output) + remove_idx + 1)
         output <- output[-to_remove]
       }
+
+      # Remove lines based on patterns
+      remove_patterns <- unlist(purrr::keep(options$remove, is.character))
+      for (p in remove_patterns) {
+        output <- output[!grepl(p, output)]
+      }
+
       # Scroll
       if (options$scroll) private$prev_output_length <- length(self$session)
 
