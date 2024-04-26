@@ -82,18 +82,23 @@
 </h1>
 </div>
 <p><a href="https://www.tidyverse.org/lifecycle/#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="Lifecycle: experimental"></a></p>
-<div class="section level3">
-<h3 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
-</h3>
-<p>The <code>knitractive</code> package provides a <a href="https://yihui.name/knitr/" class="external-link">knitr</a> engine that allows you to simulate interactive sessions (e.g., Python console, Bash shell) across multiple code chunks. Interactive sessions are run inside a <a href="https://github.com/tmux/tmux/wiki" class="external-link">tmux</a> session through the <a href="https://github.com/jeroenjanssens/tmuxr" class="external-link">tmuxr</a> and <a href="https://github.com/jeroenjanssens/rexpect" class="external-link">rexpect</a> packages.</p>
+<div class="section level2">
+<h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
+</h2>
+<p>The <code>knitractive</code> package provides a <a href="https://yihui.name/knitr/" class="external-link">knitr</a> engine that allows you to simulate interactive sessions (e.g., Python console, Bash shell) across multiple code chunks. Interactive sessions are run inside a tmux session through the <a href="https://jeronejanssens.github.io/tmuxr" class="external-link">tmuxr</a> and <a href="https://jeroenjanssens.github.io/rexpect" class="external-link">rexpect</a> packages.</p>
+</div>
+<div class="section level2">
+<h2 id="status">Status<a class="anchor" aria-label="anchor" href="#status"></a>
+</h2>
+<p>This package is experimental and not documented. Its main purpose was to build the book <a href="https://jeroenjanssens.com/dsatcl" class="external-link">Data Science at the Command Line</a>, which contains many command-line snippets, with R Markdown. It has served this purpose well. Check out the <a href="/knitractive/articles/">examples</a> to determine whether <code>knitractive</code> can be useful for you.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <p>You can install <code>knitractive</code> from GitHub with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"jeroenjanssens/knitractive"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"jeroenjanssens/knitractive"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>
