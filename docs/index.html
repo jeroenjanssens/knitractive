@@ -88,9 +88,12 @@
 <p>The <code>knitractive</code> package provides a <a href="https://yihui.name/knitr/" class="external-link">knitr</a> engine that allows you to simulate interactive sessions (e.g., Python console, Bash shell) across multiple code chunks. Interactive sessions are run inside a tmux session through the <a href="https://jeronejanssens.github.io/tmuxr" class="external-link">tmuxr</a> and <a href="https://jeroenjanssens.github.io/rexpect" class="external-link">rexpect</a> packages.</p>
 </div>
 <div class="section level2">
-<h2 id="status">Status<a class="anchor" aria-label="anchor" href="#status"></a>
+<h2 id="everybody-can-knit-with-knitractive">Everybody can knit with <code>knitractive</code>
+<a class="anchor" aria-label="anchor" href="#everybody-can-knit-with-knitractive"></a>
 </h2>
-<p>This package is experimental and not documented. Its main purpose was to build the book <a href="https://jeroenjanssens.com/dsatcl" class="external-link">Data Science at the Command Line</a>, which contains many command-line snippets, with R Markdown. It has served this purpose well. Check out the <a href="/knitractive/articles/">examples</a> to determine whether <code>knitractive</code> can be useful for you.</p>
+<p>R Markdown files combine text and code to produce, using a process called knitting, dynamic documents such as reports, presentations, websites, and even books. Unlike the name suggests, R Markdown isn’t just for useRs, but also for Pythonistas, Rubyists, Perl Monks, Lispers, and basically everybody who enjoys a good REPL. There’s just one issue: only code chunks written in R–and since recently Python—are evaluated in a persistent environment; code chucks in any other language are evaluated separately.</p>
+<p>The <code>knitractive</code> package solves this issue by providing a <code>knitr</code> engine that allows you to simulate interactive sessions (e.g., Jupyter console, Bash shell, Postgres CLI) across multiple code chunks. Interactive sessions are run inside a tmux session (optionally via a Docker container) through the <code>tmuxr</code> package.</p>
+<p>I initially developed <code>knitractive</code> along with <a href="https://jeronejanssens.github.io/tmuxr" class="external-link">tmuxr</a> and <a href="https://jeroenjanssens.github.io/rexpect" class="external-link">rexpect</a> in order to make my book <em>Data Science at the Command Line</em> available online, in the same way as Hadley Wickham and Garrett Grolemund’s <em>R for Data Science</em>. Now that these packages are open source, I hope that they’ll enable others to create beautiful R Markdown documents with their favorite programming language or REPL.</p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>

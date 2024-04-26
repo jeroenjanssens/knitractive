@@ -18,11 +18,16 @@ tmux session through the
 [rexpect](https://jeroenjanssens.github.io/rexpect) packages.
 
 
-## Status
+## Everybody can knit with `knitractive`
 
-This package is experimental and not documented.
-Its main purpose was to build the book [Data Science at the Command Line](https://jeroenjanssens.com/dsatcl), which contains many command-line snippets, with R Markdown. It has served this purpose well.
-Check out the [examples](/knitractive/articles/) to determine whether `knitractive` can be useful for you.
+R Markdown files combine text and code to produce, using a process called knitting, dynamic documents such as reports, presentations, websites, and even books. Unlike the name suggests, R Markdown isn't just for useRs, but also for Pythonistas, Rubyists, Perl Monks, Lispers, and basically everybody who enjoys a good REPL. There's just one issue: only code chunks written in R and Python are evaluated in a persistent environment; code chucks in any other language are evaluated separately.
+
+The `knitractive` package solves this issue by providing a `knitr` engine that allows you to simulate interactive sessions (e.g., Jupyter console, Bash shell, Postgres CLI) across multiple code chunks. Interactive sessions are run inside a tmux session (optionally via a Docker container) through the `tmuxr` package.
+
+I initially developed `knitractive` along with
+[tmuxr](https://jeronejanssens.github.io/tmuxr) and
+[rexpect](https://jeroenjanssens.github.io/rexpect) in order to make my book _Data Science at the Command Line_ available online, in the same way as Hadley Wickham and Garrett Grolemund's _R for Data Science_. Now that these packages are open source, I hope that they'll enable others to create beautiful R Markdown documents with their favorite programming language or REPL.
+
 
 ## Installation
 
