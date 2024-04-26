@@ -2,11 +2,10 @@ destination: docs
 
 authors:
   Jeroen Janssens:
-    href: https://datascienceworkshops.com
-  Data Science Workshops:
-    href: https://datascienceworkshops.com
+    href: https://jeroenjanssens.com
 
 template:
+  bootstrap: 5
   params:
     bootswatch: cosmo
 
@@ -24,8 +23,6 @@ navbar:
         href: articles/examples/perl.html
       - text: Python
         href: articles/examples/python.html
-    - text: "Reference"
-      href: reference/index.html
   right:
    - icon: fa-github fa-lg
-     href: https://github.com/datascienceworkshops/knitractive
+     href: https://github.com/jeroenjanssens/knitractive

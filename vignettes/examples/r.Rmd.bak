@@ -16,7 +16,7 @@ output:
         docker_image: "rocker/r-ver:3.6.0" 
 ---
 
-*View the corresponding [r.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/r.Rmd).*
+*View the corresponding [r.Rmd file](https://raw.githubusercontent.com/jeroenjanssens/knitractive/master/vignettes/examples/r.Rmd).*
 
 ## Setup
 

@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 output: github_document
 ---
 
-*View the corresponding [python.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/python.Rmd) to learn more about how this page was generated.*
+*View the corresponding [python.Rmd file](https://raw.githubusercontent.com/jeroenjanssens/knitractive/master/vignettes/examples/python.Rmd) to learn more about how this page was generated.*
 
 ```{r setup, include = FALSE}
 library(knitractive)
@@ -13,7 +13,7 @@ library(rexpect)
 library(rlang)
 start(name = "python",
       command = cmd_docker(command = "python3",
-                           image = "continuumio/anaconda3",
+                           image = "continuumio/anaconda3:2024.02-1",
                            volume = list2(!!getwd() := "/data")),
       prompt = prompts$python,
       keep_session = FALSE)
@@ -30,7 +30,7 @@ matplotlib.use('agg')
 pd.__version__
 ```
 
-Because `knitractive` employs the [tmuxr](https://datascienceworkshops.github.io/tmuxr/) package under the hood, the python session is maintained, and we can continue where we left off.
+Because `knitractive` employs the [tmuxr](https://jeroenjanssens.github.io/tmuxr/) package under the hood, the python session is maintained, and we can continue where we left off.
 
 ```{python}
 ts = pd.DataFrame({"value": np.random.randn(1000)},
@@ -65,4 +65,4 @@ ts.plot().figure.savefig("/data/python_ts.png", dpi = 200)
 knitr::include_graphics(paste0(getwd(), "/python_ts.png"))
 ```
 
-*View the corresponding [python.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/python.Rmd) to learn more about how this page was generated.*
+*View the corresponding [python.Rmd file](https://raw.githubusercontent.com/jeroenjanssens/knitractive/master/vignettes/examples/python.Rmd) to learn more about how this page was generated.*

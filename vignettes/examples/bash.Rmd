@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 output: github_document
 ---
 
-*View the corresponding [bash.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/bash.Rmd) to learn more about how this page was generated.*
+*View the corresponding [bash.Rmd file](https://raw.githubusercontent.com/jeroenjanssens/knitractive/master/vignettes/examples/bash.Rmd) to learn more about how this page was generated.*
 
 ```{r setup, include = FALSE}
 knitractive::start(name = "bash",
@@ -77,4 +77,4 @@ sleep 1000 #! expect_prompt = FALSE
 C-c #! wait = 1, literal = FALSE, expect_prompt = TRUE
 ```
 
-*View the corresponding [bash.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/bash.Rmd) to learn more about how this page was generated.*
+*View the corresponding [bash.Rmd file](https://raw.githubusercontent.com/jeroenjanssens/knitractive/master/vignettes/examples/bash.Rmd) to learn more about how this page was generated.*

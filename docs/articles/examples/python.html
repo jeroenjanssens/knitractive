@@ -4,7 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="knitractive">
 <title>Using knitractive with Python • knitractive</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
@@ -12,12 +13,11 @@
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../../apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../../apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../../bootstrap-toc.css">
-<script src="../../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
+<script src="../../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
+<script src="../../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../../pkgdown.css" rel="stylesheet">
-<script src="../../pkgdown.js"></script><link href="../../extra.css" rel="stylesheet">
+<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../../pkgdown.js"></script><link href="../../extra.css" rel="stylesheet">
 <meta property="og:title" content="Using knitractive with Python">
 <meta property="og:description" content="knitractive">
 <meta property="og:image" content="/logo.svg">
@@ -26,103 +26,94 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<body data-spy="scroll" data-target="#toc">
-    <div class="container template-article">
-      <header><div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="../../index.html">knitractive</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
-      </span>
-    </div>
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
+    
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="../../index.html">
+    <nav class="navbar fixed-top navbar-inverse navbar-expand-lg bg-primary" data-bs-theme="inverse"><div class="container">
+    
+    <a class="navbar-brand me-2" href="../../index.html">knitractive</a>
+
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item">
+  <a class="nav-link" href="../../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Examples
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-<li>
-      <a href="../../articles/examples/bash.html">Bash</a>
-    </li>
-    <li>
-      <a href="../../articles/examples/perl.html">Perl</a>
-    </li>
-    <li>
-      <a href="../../articles/examples/python.html">Python</a>
-    </li>
-  </ul>
-</li>
-<li>
-  <a href="../../reference/index.html">Reference</a>
+<li class="active nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-examples">Examples</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-examples">
+    <a class="dropdown-item" href="../../articles/examples/bash.html">Bash</a>
+    <a class="dropdown-item" href="../../articles/examples/perl.html">Perl</a>
+    <a class="dropdown-item" href="../../articles/examples/python.html">Python</a>
+  </div>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/datascienceworkshops/knitractive">
+<form class="form-inline my-2 my-lg-0" role="search">
+        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../../search.json" id="search-input" placeholder="Search for" autocomplete="off">
+</form>
+
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jeroenjanssens/knitractive">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
 </li>
       </ul>
 </div>
-<!--/.nav-collapse -->
+
+    
   </div>
-<!--/.container -->
-</div>
-<!--/.navbar -->
+</nav><div class="container template-article">
 
-      
 
-      </header><script src="python_files/header-attrs-2.9/header-attrs.js"></script><div class="row">
-  <div class="col-md-9 contents">
-    <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Using knitractive with Python</h1>
-                        <h4 class="author">Jeroen Janssens</h4>
+
+
+<div class="row">
+  <main id="main" class="col-md-9"><div class="page-header">
+      <img src="../../logo.svg" class="logo" alt=""><h1>Using knitractive with Python</h1>
+                        <h4 data-toc-skip class="author">Jeroen
+Janssens</h4>
             
-            <h4 class="date">2021-11-16</h4>
+            <h4 data-toc-skip class="date">2024-04-26</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/datascienceworkshops/knitractive/blob/master/vignettes/examples/python.Rmd"><code>vignettes/examples/python.Rmd</code></a></small>
-      <div class="hidden name"><code>python.Rmd</code></div>
-
+      <small class="dont-index">Source: <a href="https://github.com/jeroenjanssens/knitractive/blob/HEAD/vignettes/examples/python.Rmd" class="external-link"><code>vignettes/examples/python.Rmd</code></a></small>
+      <div class="d-none name"><code>python.Rmd</code></div>
     </div>
 
     
     
-<p><em>View the corresponding <a href="https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/python.Rmd">python.Rmd file</a> to learn more about how this page was generated.</em></p>
-<p>In this example, we’re using the <a href="https://hub.docker.com/r/continuumio/anaconda3/">continuumio/anaconda3</a> docker image to run Python.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Python <span class="fl">3.8.8</span> (default, Apr <span class="dv">23</span> <span class="dv">2021</span>, <span class="dv">03</span>:<span class="dv">28</span>:<span class="dv">49</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>[GCC <span class="fl">10.2.0</span>] :: Anaconda, Inc. on linux</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Type <span class="st">"help"</span>, <span class="st">"copyright"</span>, <span class="st">"credits"</span> <span class="kw">or</span> <span class="st">"license"</span> <span class="cf">for</span> more information.</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> matplotlib</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> matplotlib.use(<span class="st">'agg'</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> pd.__version__</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">'1.2.4'</span></span></code></pre></div>
-<p>Because <code>knitractive</code> employs the <a href="https://datascienceworkshops.github.io/tmuxr/">tmuxr</a> package under the hood, the python session is maintained, and we can continue where we left off.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ts <span class="op">=</span> pd.DataFrame({<span class="st">"value"</span>: np.random.randn(<span class="dv">1000</span>)},</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>...                   index<span class="op">=</span>pd.date_range(<span class="st">'1/1/2000'</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>...                   periods<span class="op">=</span><span class="dv">1000</span>))</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ts <span class="op">=</span> ts.cumsum()</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ts.head()</span></code></pre></div>
+<p><em>View the corresponding <a href="https://raw.githubusercontent.com/jeroenjanssens/knitractive/master/vignettes/examples/python.Rmd" class="external-link">python.Rmd
+file</a> to learn more about how this page was generated.</em></p>
+<p>In this example, we’re using the <a href="https://hub.docker.com/r/continuumio/anaconda3/" class="external-link">continuumio/anaconda3</a>
+docker image to run Python.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>Python <span class="fl">3.11.7</span> (main, Dec <span class="dv">15</span> <span class="dv">2023</span>, <span class="dv">18</span>:<span class="dv">0</span><span class="er">4</span>:<span class="dv">41</span>) [GCC <span class="fl">11.2.0</span>] on linux</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>Type <span class="st">"help"</span>, <span class="st">"copyright"</span>, <span class="st">"credits"</span> <span class="kw">or</span> <span class="st">"license"</span> <span class="cf">for</span> more information.</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> matplotlib</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> matplotlib.use(<span class="st">'agg'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> pd.__version__</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="co">'2.1.4'</span></span></code></pre></div>
+<p>Because <code>knitractive</code> employs the <a href="https://jeroenjanssens.github.io/tmuxr/" class="external-link">tmuxr</a> package under
+the hood, the python session is maintained, and we can continue where we
+left off.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ts <span class="op">=</span> pd.DataFrame({<span class="st">"value"</span>: np.random.randn(<span class="dv">1000</span>)},</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>...                   index<span class="op">=</span>pd.date_range(<span class="st">'1/1/2000'</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>...                   periods<span class="op">=</span><span class="dv">1000</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ts <span class="op">=</span> ts.cumsum()</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ts.head()</span></code></pre></div>
 <table class="table dataframe">
 <thead><tr style="text-align: right;">
 <th></th>
@@ -131,53 +122,53 @@
 <tbody>
 <tr>
 <th>2000-01-01</th>
-      <td>1.639093</td>
+      <td>0.046733</td>
     </tr>
 <tr>
 <th>2000-01-02</th>
-      <td>2.367394</td>
+      <td>1.360058</td>
     </tr>
 <tr>
 <th>2000-01-03</th>
-      <td>3.013225</td>
+      <td>2.813645</td>
     </tr>
 <tr>
 <th>2000-01-04</th>
-      <td>3.994226</td>
+      <td>2.744033</td>
     </tr>
 <tr>
 <th>2000-01-05</th>
-      <td>3.874939</td>
+      <td>3.593776</td>
     </tr>
 </tbody>
 </table>
-<p>We’ve mapped the current working directory on the host to the directory <code>/data/</code> inside the docker container, so that we can include generated figures.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ts.plot()</span></code></pre></div>
+<p>We’ve mapped the current working directory on the host to the
+directory <code>/data/</code> inside the docker container, so that we
+can include generated figures.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ts.plot()</span></code></pre></div>
 <p><img src="python_ts.png" width="640"></p>
-<p><em>View the corresponding <a href="https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/python.Rmd">python.Rmd file</a> to learn more about how this page was generated.</em></p>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-
-      </div>
-
+<p><em>View the corresponding <a href="https://raw.githubusercontent.com/jeroenjanssens/knitractive/master/vignettes/examples/python.Rmd" class="external-link">python.Rmd
+file</a> to learn more about how this page was generated.</em></p>
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
 
-      <footer><div class="copyright">
-  <p>Developed by <a href="https://datascienceworkshops.com">Jeroen Janssens</a>, <a href="https://datascienceworkshops.com">Data Science Workshops</a>.</p>
+    <footer><div class="pkgdown-footer-left">
+  <p>Developed by <a href="https://jeroenjanssens.com" class="external-link">Jeroen Janssens</a>.</p>
 </div>
 
-<div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+<div class="pkgdown-footer-right">
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.9.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
   
 
+  
 
   </body>
 </html>

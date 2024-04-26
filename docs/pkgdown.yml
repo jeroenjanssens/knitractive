@@ -1,10 +1,9 @@
-pandoc: '2.13'
-pkgdown: 1.6.1
+pandoc: 3.1.12
+pkgdown: 2.0.9
 pkgdown_sha: ~
 articles:
-  examples/bash: bash.html
-  examples/perl: perl.html
-  examples/python: python.html
-  knitractive: knitractive.html
-last_built: 2021-11-16T20:06Z
+  bash: examples/bash.html
+  perl: examples/perl.html
+  python: examples/python.html
+last_built: 2024-04-26T04:55Z
 

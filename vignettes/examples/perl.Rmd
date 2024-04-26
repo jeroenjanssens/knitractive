@@ -5,10 +5,10 @@ date: "`r Sys.Date()`"
 output: github_document
 ---
 
-*View the corresponding [perl.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/perl.Rmd) to learn more about how this page was generated.*
+*View the corresponding [perl.Rmd file](https://raw.githubusercontent.com/jeroenjanssens/knitractive/master/vignettes/examples/perl.Rmd) to learn more about how this page was generated.*
 
 ```{r setup, include = FALSE}
-knitractive::start("perl", rexpect::cmd_docker(image = "rakudo-star"), prompt = "^(>|\\*)$")
+knitractive::start("perl", rexpect::cmd_docker(image = "rakudo-star:2021.04"), prompt = "^(>|\\*)$")
 ```
 
 Create a function in Perl.
@@ -27,4 +27,4 @@ hello('R Markdown');
 ```
 
 
-*View the corresponding [perl.Rmd file](https://raw.githubusercontent.com/datascienceworkshops/knitractive/master/vignettes/examples/perl.Rmd) to learn more about how this page was generated.*
+*View the corresponding [perl.Rmd file](https://raw.githubusercontent.com/jeroenjanssens/knitractive/master/vignettes/examples/perl.Rmd) to learn more about how this page was generated.*
