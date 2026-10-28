@@ -13,7 +13,7 @@ engine that allows you to simulate interactive sessions (e.g., Python
 console, Bash shell) across multiple code chunks. Interactive sessions
 are run inside a tmux session through the
 [tmuxr](https://jeronejanssens.github.io/tmuxr) and
-[rexpect](https://jeroenjanssens.github.io/rexpect) packages.
+[rexpect](https://rexpect.jeroenjanssens.com) packages.
 
 ## Everybody can knit with `knitractive`
 
@@ -34,7 +34,7 @@ Docker container) through the `tmuxr` package.
 
 I initially developed `knitractive` along with
 [tmuxr](https://jeronejanssens.github.io/tmuxr) and
-[rexpect](https://jeroenjanssens.github.io/rexpect) in order to make my
+[rexpect](https://rexpect.jeroenjanssens.com) in order to make my
 book *Data Science at the Command Line* available online, in the same
 way as Hadley Wickham and Garrett Grolemund’s *R for Data Science*. Now
 that these packages are open source, I hope that they’ll enable others

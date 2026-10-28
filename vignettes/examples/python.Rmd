@@ -30,7 +30,7 @@ matplotlib.use('agg')
 pd.__version__
 ```
 
-Because `knitractive` employs the [tmuxr](https://jeroenjanssens.github.io/tmuxr/) package under the hood, the python session is maintained, and we can continue where we left off.
+Because `knitractive` employs the [tmuxr](https://tmuxr.jeroenjanssens.com/) package under the hood, the python session is maintained, and we can continue where we left off.
 
 ```{python}
 ts = pd.DataFrame({"value": np.random.randn(1000)},
